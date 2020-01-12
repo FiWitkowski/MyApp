@@ -12,18 +12,17 @@ import com.example.myapp.R;
 
 public class MainApp extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonLogout;
-    EditText etUsername, etFirstName,etLastName;
+    Button buttonLogout,buttonSettings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_app);
-        etUsername = (EditText) findViewById(R.id.etUsername);
-        etFirstName = (EditText) findViewById(R.id.etFirstName);
-        etLastName = (EditText) findViewById(R.id.etLastName);
-        buttonLogout = (Button) findViewById(R.id.buttonLogout);
 
+        buttonLogout = (Button) findViewById(R.id.buttonLogout);
+        buttonSettings = (Button) findViewById(R.id.buttonSettings);
         buttonLogout.setOnClickListener(this);
+        buttonSettings.setOnClickListener(this);
     }
 
     @Override
@@ -31,6 +30,9 @@ public class MainApp extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.buttonLogout:
                 startActivity(new Intent(this,Login.class));
+                break;
+            case R.id.buttonSettings:
+                startActivity(new Intent(this,Settings.class));
                 break;
         }
     }
