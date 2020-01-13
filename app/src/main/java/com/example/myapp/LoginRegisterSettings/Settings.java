@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.myapp.LoginRegisterSettings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.myapp.MainApp;
+import com.example.myapp.R;
 
 public class Settings extends AppCompatActivity implements View.OnClickListener{
 
@@ -32,7 +35,7 @@ public class Settings extends AppCompatActivity implements View.OnClickListener{
         switch (v.getId()){
             case R.id.buttonChangePassword:
                 //Logika zmiany hasla
-                startActivity(new Intent(this,MainApp.class));
+                startActivity(new Intent(this, MainApp.class));
                 break;
 
         }
