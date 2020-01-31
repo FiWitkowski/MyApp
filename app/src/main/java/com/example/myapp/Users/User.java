@@ -10,7 +10,7 @@ public abstract class User {
     public String firstName, lastName;
     public int age;
     public Date dateOfBirth;
-    public ContactsContract.CommonDataKinds.Email emailAddress;
+    public String emailAddress;
     public AccessLevel typeOfUser;
 
 
@@ -19,6 +19,10 @@ public abstract class User {
         this.lastName = lastName;
         this.userName = userName;
         this.password = password;
+        this.age=-1;
+        this.dateOfBirth=new Date(1996,9,29);
+        this.emailAddress  ="";
+        typeOfUser = AccessLevel.STUDENT;
     }
         final public String getUserName(){
             return this.userName;

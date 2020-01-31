@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.myapp.Misc;
 
 import com.example.myapp.Users.Student;
 import com.example.myapp.Users.Teacher;
@@ -10,4 +10,7 @@ public class Class {
     List<Student> listStudents;
     Teacher mainTeacher;
     List<Teacher> listTeachers;
+    double SredniaOcen(){
+        return 0;
+    }
 }

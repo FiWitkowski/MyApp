@@ -19,26 +19,28 @@ public class UserLocalStore {
         spEditor.putString("dateOfBirth",user.dateOfBirth.toString());
         spEditor.putString("email",user.emailAddress.toString());
         spEditor.putInt("age",user.age);
+
+        //spEditor.putString("typeOfUser",user.typeOfUser.ToString());
         spEditor.commit();
 
     }
+
     public User getLoggedInUser(){
+        //Polowa tych zmiennych nie ma znaczenia
         String firstName = userLocalDatabase.getString("firstName","");
         String lastName = userLocalDatabase.getString("lastName","");
         String userName = userLocalDatabase.getString("userName","");
         String password = userLocalDatabase.getString("password","");
-
+        String email = userLocalDatabase.getString("email","");
+        String dateOfBirth = userLocalDatabase.getString("dateOfBirth","");
         int age = userLocalDatabase.getInt("age",-1);
 
+        //zamienic na wyszukiwanie
+        User storedUser = new Student(firstName,lastName,userName,password);
         AccessLevel typeOfUser =AccessLevel.valueOf(userLocalDatabase.getString("typeOfUser",""));
-        User storedUser;
-        switch(typeOfUser){
-            case STUDENT:
-                storedUser = new Student(firstName, lastName, userName, password);
-                return storedUser;
 
-        }
-        return storedUser = new Admin(firstName,lastName,userName,password);
+
+        return storedUser;
     }
 
     public void setUserLoggedIn(boolean loggedIn){
@@ -48,10 +50,7 @@ public class UserLocalStore {
     }
 
     public boolean getUserLoggedIn(){
-        if (userLocalDatabase.getBoolean("loggedIn",false)==true)
-            return true;
-        else
-            return false;
+        return userLocalDatabase.getBoolean("loggedIn",false);
     }
 
     public void clearUserData(){

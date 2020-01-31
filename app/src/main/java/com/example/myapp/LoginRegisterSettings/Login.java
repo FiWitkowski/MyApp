@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         tvRegisterLink=(TextView) findViewById(R.id.tvRegisterLink);
         buttonLogin.setOnClickListener(this);
         tvRegisterLink.setOnClickListener(this);
-//        userLocalStore=new UserLocalStore(this);
+        userLocalStore=new UserLocalStore(this);
     }
 
 
@@ -44,10 +44,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.buttonLogin:
-                //userLocalStore.clearUserData();
-                //userLocalStore.setUserLoggedIn(true);
-                //User user = new Student("","","","");
-                //userLocalStore.storeUserData(user);
+                userLocalStore.clearUserData();
+                userLocalStore.setUserLoggedIn(true);
+                //need change
+                User user = new Student("","","","");
+                userLocalStore.storeUserData(user);
                 startActivity(new Intent(this, MainApp.class));
                 break;
             case R.id.tvRegisterLink:
