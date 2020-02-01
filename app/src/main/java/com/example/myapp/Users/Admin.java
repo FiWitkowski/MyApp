@@ -1,10 +1,26 @@
 package com.example.myapp.Users;
 
 public class Admin extends User {
-    public Admin(String userName,String password){
-        super("","",userName,password);
-    }
+    private static final Admin instance = new Admin();
+
     public Admin(String firstName, String lastName, String userName, String password) {
-        super(firstName, lastName, userName, password);
+        this();
     }
+
+    private Admin(){
+       super("admin","admin","admin","admin");
+    }
+    public static final Admin getInstance(){
+
+        return instance;
+    }
+
+    public void ChangePassword(String newPassword){
+        instance.password=newPassword;
+    }
+    public void ChangeUsername(String newUsername){
+        instance.userName=newUsername;
+    }
+
+
 }
