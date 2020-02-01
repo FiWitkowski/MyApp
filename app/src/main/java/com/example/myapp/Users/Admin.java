@@ -8,7 +8,8 @@ public class Admin extends User {
     }
 
     private Admin(){
-       super("admin","admin","admin","admin");
+       userName="admin";
+       password="admin";
     }
     public static final Admin getInstance(){
 

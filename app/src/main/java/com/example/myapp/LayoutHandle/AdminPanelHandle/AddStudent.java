@@ -2,7 +2,9 @@ package com.example.myapp.LayoutHandle.AdminPanelHandle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,8 +37,23 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
         btAddStudent=findViewById(R.id.btAddStudent2);
         btGoBack=findViewById(R.id.btGoBackAddStudent);
         userLocalStore=new UserLocalStore(this);
+
+        btAddStudent.setOnClickListener(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        btGoBack.setOnClickListener(this);
+
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     public void onClick(View v) {
       try{
@@ -45,12 +62,10 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
                   //logic
                   if(etPassword1.getText()!=etPassword2.getText())
                       throw(new Exception("Passwords don't match"));
-                  userDB.addUser(new Student(etFirstName.getText().toString(),
-                          etLastName.getText().toString(),
-                          etUserName.getText().toString(),
-                          etPassword1.getText().toString()));
-
+                  userDB.addUser(new Student(etUserName.getText().toString(),etPassword1.getText().toString()));
                   break;
+              case R.id.btGoBackAddStudent:
+                  this.finish();
           }
       }
       catch(Exception e){
