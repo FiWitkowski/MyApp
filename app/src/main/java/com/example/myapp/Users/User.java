@@ -5,14 +5,16 @@ import android.provider.ContactsContract;
 import java.util.Date;
 
 public abstract class User {
-    private String userName;
-    private String password;
+    protected String userName;
+    protected String password;
     public String firstName, lastName;
     public int age;
     public Date dateOfBirth;
     public String emailAddress;
     public AccessLevel typeOfUser;
+    public User(){
 
+    }
 
     public User(String firstName, String lastName, String userName, String password) {
         this.firstName = firstName;

@@ -1,4 +1,4 @@
-package com.example.myapp.LoginRegisterSettings;
+package com.example.myapp.LayoutHandle;
 
 import androidx.appcompat.app.AppCompatActivity;
 

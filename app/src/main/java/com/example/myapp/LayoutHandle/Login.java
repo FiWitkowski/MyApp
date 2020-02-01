@@ -1,10 +1,12 @@
-package com.example.myapp.LoginRegisterSettings;
+package com.example.myapp.LayoutHandle;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.myapp.DataBases.UserDB;
 import com.example.myapp.MainApp;
 import com.example.myapp.R;
+import com.example.myapp.Users.Admin;
 import com.example.myapp.Users.Student;
 import com.example.myapp.Users.User;
 import com.example.myapp.Users.UserLocalStore;
@@ -23,6 +25,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText etUsername, etPassword;
     TextView tvRegisterLink;
     UserLocalStore userLocalStore;
+    UserDB userDB = UserDB.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,19 +45,33 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.buttonLogin:
-                userLocalStore.clearUserData();
-                userLocalStore.setUserLoggedIn(true);
-                //need change
-                User user = new Student("","","","");
-                userLocalStore.storeUserData(user);
-                startActivity(new Intent(this, MainApp.class));
-                break;
-            case R.id.tvRegisterLink:
-                startActivity(new Intent(this,Register.class));
-                break;
+        try{
+            switch (v.getId()) {
+                case R.id.buttonLogin:
+                    userLocalStore.clearUserData();
+                    userLocalStore.setUserLoggedIn(true);
+                    if(etUsername.getText().toString().equals("admin")&&
+                            etPassword.getText().toString().equals("admin")) {
+                        userLocalStore.storeUserData(Admin.getInstance());
+                        startActivity(new Intent(this,AdminPanel.class));
+                        break;
+                    }
 
+
+                    //need change
+
+
+                    User user = new Student("", "", "", "");
+                    userLocalStore.storeUserData(user);
+                    startActivity(new Intent(this, MainApp.class));
+                    break;
+                case R.id.tvRegisterLink:
+                    startActivity(new Intent(this, Register.class));
+                    break;
+             }
+        }
+        catch(Exception e){
+            throw e;
         }
     }
 }
