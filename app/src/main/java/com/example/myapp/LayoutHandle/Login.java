@@ -1,6 +1,7 @@
 package com.example.myapp.LayoutHandle;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.example.myapp.DataBases.UserDB;
@@ -12,12 +13,15 @@ import com.example.myapp.Users.User;
 import com.example.myapp.Users.UserLocalStore;
 
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.Date;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
@@ -43,6 +47,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onClick(View v) {
         try{
@@ -61,7 +66,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     //need change
 
 
-                    User user = new Student("", "", "", "");
+                    User user = new Student("", "", "", "",-1,new Date(1,1,1),"");
                     userLocalStore.storeUserData(user);
                     startActivity(new Intent(this, MainApp.class));
                     break;

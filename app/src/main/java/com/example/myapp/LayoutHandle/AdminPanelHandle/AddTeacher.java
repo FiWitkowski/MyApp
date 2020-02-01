@@ -44,10 +44,10 @@ public class AddTeacher extends AppCompatActivity implements View.OnClickListene
                     //logic
                     if (etPassword1.getText() != etPassword2.getText())
                         throw (new Exception("Passwords don't match"));
-                    userDB.addUser(new Teacher(etFirstName.getText().toString(),
-                            etLastName.getText().toString(),
-                            etUserName.getText().toString(),
-                            etPassword1.getText().toString()));
+//                    userDB.addUser(new Teacher(etFirstName.getText().toString(),
+//                            etLastName.getText().toString(),
+//                            etUserName.getText().toString(),
+//                            etPassword1.getText().toString()));
 
                     break;
             }
