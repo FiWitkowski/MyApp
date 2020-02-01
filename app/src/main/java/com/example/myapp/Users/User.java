@@ -16,17 +16,18 @@ public abstract class User {
 
     }
 
-    public User(String firstName, String lastName, String userName, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String userName, String password, String firstName, String lastName, int age, Date dateOfBirth, String emailAddress, AccessLevel typeOfUser) {
         this.userName = userName;
         this.password = password;
-        this.age=-1;
-        this.dateOfBirth=new Date(1996,9,29);
-        this.emailAddress  ="";
-        typeOfUser = AccessLevel.STUDENT;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.dateOfBirth = dateOfBirth;
+        this.emailAddress = emailAddress;
+        this.typeOfUser = typeOfUser;
     }
-        final public String getUserName(){
+
+    final public String getUserName(){
             return this.userName;
         }
         final public String getPassword(){

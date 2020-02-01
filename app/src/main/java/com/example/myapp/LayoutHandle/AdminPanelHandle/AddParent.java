@@ -27,7 +27,7 @@ public class AddParent extends AppCompatActivity implements View.OnClickListener
         etFirstName=findViewById(R.id.etFirstNameAddParent);
         etLastName=findViewById(R.id.etLastNameAddParent);
         etEmail=findViewById(R.id.etEmailAddParent);
-        btAddParent=findViewById(R.id.btAddParent);
+        btAddParent=findViewById(R.id.btAddParent2);
         btGoBack=findViewById(R.id.btGoBackAddParent);
         btChooseChild=findViewById(R.id.btChooseChildAddParent);
         userLocalStore=new UserLocalStore(this);
@@ -37,15 +37,15 @@ public class AddParent extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         try{
             switch (v.getId()){
-                case R.id.btAddParent:
+                case R.id.btAddParent2:
                     //logic
                     if(etPassword1.getText()!=etPassword2.getText())
                         throw(new Exception("Passwords don't match"));
-                    userDB.addUser(new Parent(etFirstName.getText().toString(),
-                            etLastName.getText().toString(),
-                            etUserName.getText().toString(),
-                            etPassword1.getText().toString(),
-                            etPhone.getText().toString()));
+//                    userDB.addUser(new Parent(etFirstName.getText().toString(),
+//                            etLastName.getText().toString(),
+//                            etUserName.getText().toString(),
+//                            etPassword1.getText().toString(),
+//                            etPhone.getText().toString()));
 
                     break;
             }

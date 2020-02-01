@@ -2,6 +2,11 @@ package com.example.myapp.Users;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import com.example.myapp.DataBases.UserDB;
 
 public class UserLocalStore {
     public static final String SP_NAME="userDetails";
@@ -25,6 +30,7 @@ public class UserLocalStore {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public User getLoggedInUser(){
         //Polowa tych zmiennych nie ma znaczenia
         String firstName = userLocalDatabase.getString("firstName","");
@@ -36,7 +42,7 @@ public class UserLocalStore {
         int age = userLocalDatabase.getInt("age",-1);
 
         //zamienic na wyszukiwanie
-        User storedUser = new Student(firstName,lastName,userName,password);
+        User storedUser = UserDB.getInstance().searchUser(userName);
         AccessLevel typeOfUser =AccessLevel.valueOf(userLocalDatabase.getString("typeOfUser",""));
 
 

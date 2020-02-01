@@ -84,7 +84,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                         String lastName = etLastName.getText().toString();
                         String userName = etUsername.getText().toString();
                         String password = etPassword.getText().toString();
-                        User registeredData = new Student(firstName,lastName,userName,password);
+//                        User registeredData = new Student(firstName,lastName,userName,password);
                 }
                 startActivity(new Intent(this,Login.class));
                 break;
