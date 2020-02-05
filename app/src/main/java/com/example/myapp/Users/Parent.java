@@ -12,25 +12,26 @@ import java.util.List;
 
 public class Parent extends User implements Serializable {
 
-    public String childUserName;
+    public Student child;
 
     public Parent(String userName, String password){
-        this(userName,password,"","",-1,new Date(1000,1,1),"");
+        this(userName,password,"","",-1,"");
     }
     public Parent(String userName, String password, String firstName,
-                  String lastName,int age, Date dateOfBirth, String emailAddress) {
+                  String lastName,int age, String emailAddress) {
         super(userName, password, firstName, lastName, age, emailAddress,AccessLevel.PARENT);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public Parent(String userName, String password, String firstName, String lastName,
                   int age, Date dateOfBirth, String emailAddress, Student child){
-        this(userName,password,firstName,lastName,age,dateOfBirth,emailAddress);
+        this(userName,password,firstName,lastName,age,emailAddress);
+        this.child=child;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public List<Integer> checkGrades(Subject subject){
-        return ((Student)UserDB.getInstance().searchUser(childUserName)).grades.get(subject);
+        return (child.grades.get(subject));
     }
 
 
