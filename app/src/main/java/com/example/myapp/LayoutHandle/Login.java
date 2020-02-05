@@ -27,7 +27,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     Button buttonLogin;
     EditText etUsername, etPassword;
     TextView tvRegisterLink;
-    UserLocalStore userLocalStore;
     UserDB userDB = UserDB.getInstance();
 
     @Override
@@ -40,7 +39,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         tvRegisterLink=(TextView) findViewById(R.id.tvRegisterLink);
         buttonLogin.setOnClickListener(this);
         tvRegisterLink.setOnClickListener(this);
-        userLocalStore=new UserLocalStore(this);
     }
 
 
@@ -52,11 +50,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         try{
             switch (v.getId()) {
                 case R.id.buttonLogin:
-                    userLocalStore.clearUserData();
-                    userLocalStore.setUserLoggedIn(true);
+
                     if(etUsername.getText().toString().equals("admin")&&
                             etPassword.getText().toString().equals("admin")) {
-                        userLocalStore.storeUserData(Admin.getInstance());
                         startActivity(new Intent(this,AdminPanel.class));
                         break;
                     }
@@ -64,9 +60,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                     //need change
 
-
                     User user = new Student("", "", "", "",-1,new Date(1,1,1),"");
-                    userLocalStore.storeUserData(user);
+
                     startActivity(new Intent(this, MainApp.class));
                     break;
                 case R.id.tvRegisterLink:

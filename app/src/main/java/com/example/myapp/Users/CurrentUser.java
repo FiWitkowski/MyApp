@@ -8,7 +8,7 @@ public class CurrentUser {
     public User getUser(){
         return instance;
     }
-    
+
     public void setUser(User user){
         instance = user;
     }
