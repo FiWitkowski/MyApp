@@ -6,12 +6,9 @@ import android.os.Bundle;
 
 import com.example.myapp.DataBases.ClassDB;
 import com.example.myapp.DataBases.UserDB;
-import com.example.myapp.MainApp;
 import com.example.myapp.Misc.Class;
-import com.example.myapp.Misc.Grade;
 import com.example.myapp.Misc.Subject;
 import com.example.myapp.R;
-import com.example.myapp.TeacherActivity.TeacherMainAct;
 import com.example.myapp.TeacherActivity.TeacherMainActivity;
 import com.example.myapp.Users.Admin;
 import com.example.myapp.Users.CurrentUser;
@@ -30,7 +27,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
@@ -80,12 +76,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     Teacher t1 = new Teacher("n1", "n1", "Teresa", "Kowalska", 59, "tereska@o2.pl");
                     UserDB.addUser(t1);
                     List<Integer> listaOcen1=new ArrayList<Integer>();
-//                    listaOcen1.add(1);
-//                    listaOcen1.add(4);
-//                    listaOcen1.add(5);
-//                    s1.grades.put(new Subject("matematyka",t1),listaOcen1);
-//                    s1.grades.put(new Subject("historia",t1),listaOcen1);
-//                    UserDB.addUser(s1);
+                    listaOcen1.add(1);
+                    listaOcen1.add(4);
+                    listaOcen1.add(5);
+                    Subject sub1 = new Subject("matematyka",t1);
+                    s1.grades.put(sub1,listaOcen1);
+                    s1.grades.put(new Subject("historia",t1),listaOcen1);
+                    UserDB.addUser(s1);
+                    t1.AddSubject(sub1);
                     /*
                     Student s2 = new Student("pimpon2", "pimpoon2", "Iza", "Krawczyk", 12, "pimpon2@onet.pl", "1b");
                     Student s3 = new Student("pimpon3", "pimpoon3", "Filip", "Witkowski", 14, "pimpon333@onet.pl", "2a");

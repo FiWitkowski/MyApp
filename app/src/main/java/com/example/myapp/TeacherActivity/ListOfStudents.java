@@ -10,19 +10,17 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.example.myapp.LayoutHandle.MainController;
 import com.example.myapp.Misc.Subject;
 import com.example.myapp.R;
 import com.example.myapp.Users.CurrentUser;
 import com.example.myapp.Users.Student;
 import com.example.myapp.Users.Teacher;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class StudentList extends AppCompatActivity {
+public class ListOfStudents extends AppCompatActivity {
 
     private ListView list ;
     Button btAddGrade;
@@ -42,10 +40,12 @@ public class StudentList extends AppCompatActivity {
         List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();
         List<Student> students = new ArrayList<>();
         //MainController.getInstance().getListOfStudents(schoolClass);
+        if(subjects.size()>0)
         for (Subject subject:subjects
-             ) {
+        ) {
+            if(subject.students.size()>0);
             for (Student student: subject.students
-                 ) {
+            ) {
                 students.add(student);
             }
 
@@ -69,9 +69,9 @@ public class StudentList extends AppCompatActivity {
 //                bundle.putSerializable("CHILD", (Serializable) students.get(position));
 //                bundle.putSerializable("SUBJECT",subject);
 //                bundle.putSerializable("SCHOOL_CLASS", schoolClass);
-                  bundle.putString("STUDENT",itempupil.userName);
+                bundle.putString("STUDENT",itempupil.userName);
 
-                Intent intent = new Intent(StudentList.this, GradeList.class);
+                Intent intent = new Intent(ListOfStudents.this, GradeList.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
