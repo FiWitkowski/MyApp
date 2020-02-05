@@ -10,7 +10,6 @@ import android.widget.Button;
 import com.example.myapp.LayoutHandle.Login;
 import com.example.myapp.LayoutHandle.Settings;
 import com.example.myapp.Users.User;
-import com.example.myapp.Users.UserLocalStore;
 
 
 public class MainApp extends AppCompatActivity implements View.OnClickListener {
