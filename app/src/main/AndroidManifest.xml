@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LayoutHandle.AdminPanelHandle.AddParent"></activity>
-        <activity android:name=".LayoutHandle.AdminPanelHandle.AddStudent"
-            android:parentActivityName=".LayoutHandle.AdminPanel">
-        </activity>
+        <activity android:name=".LayoutHandle.ParentActivity"></activity>
+        <activity android:name=".LayoutHandle.AdminPanelHandle.AddParent" />
+        <activity
+            android:name=".LayoutHandle.AdminPanelHandle.AddStudent"
+            android:parentActivityName=".LayoutHandle.AdminPanel"></activity>
         <activity android:name=".LayoutHandle.AdminPanel" />
         <activity android:name=".LayoutHandle.Settings" />
         <activity android:name=".MainApp" />

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LayoutHandle.ParentActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Subjects of your child"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/lv_SubjectListParentActivity"
+            android:layout_width="match_parent"
+            android:layout_height="277dp"
+            android:layout_gravity="right"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Grades "
+            android:textSize="18sp" />
+
+        <ListView
+            android:id="@+id/lv_GradeListParentActivity"
+            android:layout_width="412dp"
+            android:layout_height="212dp"
+            android:layout_gravity="right" />
+
+        <Button
+            android:id="@+id/bt_CheckGradesParentActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Check grades"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/bt_ExitParentActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exit" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
