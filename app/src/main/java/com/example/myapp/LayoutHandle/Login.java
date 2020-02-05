@@ -69,10 +69,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                     Class b1= new Class("1b");
                     ClassDB.addClass(b1);
-                    Student s1 = new Student("pimpon", "pimpoon", "Ola", "Kralka",
+                    Student s1 = new Student("pimpon", "pimpon", "Ola", "Kralka",
                             13, "pimpon@onet.pl", "1b");
-                    UserDB.addUser(new Parent("parent","parent","Kralek","Krawczyk",
-                            99,"rodzic@interia.pl",s1));
+                    Parent p1=new Parent("parent","parent","Kralek","Krawczyk",
+                            99,"rodzic@interia.pl",s1);
+                    UserDB.addUser(p1);
 
                     Teacher t1 = new Teacher("nauczyciel1", "kochamdzieci123", "Teresa", "Kowalska", 59, "tereska@o2.pl");
                     List<Integer> listaOcen1=new ArrayList<Integer>();
@@ -81,6 +82,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     listaOcen1.add(5);
                     s1.grades.put(new Subject("matematyka",t1),listaOcen1);
                     s1.grades.put(new Subject("historia",t1),listaOcen1);
+                    s1.parent=p1;
                     UserDB.addUser(s1);
                     /*
                     Student s2 = new Student("pimpon2", "pimpoon2", "Iza", "Krawczyk", 12, "pimpon2@onet.pl", "1b");
@@ -165,6 +167,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             CurrentUser.setUser(user);
                             switch(user.typeOfUser){
                                 case STUDENT:
+                                    startActivity(new Intent(this,StudentActivity.class));
                                     break;
                                 case TEACHER:
                                     break;
