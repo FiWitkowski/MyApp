@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapp.DataBases.UserDB;
 import com.example.myapp.R;
-import com.example.myapp.Users.Teacher;
-import com.example.myapp.Users.UserLocalStore;
 
 public class AddTeacher extends AppCompatActivity implements View.OnClickListener{
     Button btAddTeacher2,btGoBackAddTeacher;

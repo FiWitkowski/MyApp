@@ -11,7 +11,6 @@ import com.example.myapp.LayoutHandle.Login;
 import com.example.myapp.LayoutHandle.MainController;
 import com.example.myapp.LayoutHandle.Settings;
 import com.example.myapp.Users.User;
-import com.example.myapp.Users.UserLocalStore;
 
 
 public class MainApp extends AppCompatActivity implements View.OnClickListener {

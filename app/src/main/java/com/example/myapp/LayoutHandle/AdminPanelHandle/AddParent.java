@@ -9,8 +9,6 @@ import android.widget.EditText;
 
 import com.example.myapp.DataBases.UserDB;
 import com.example.myapp.R;
-import com.example.myapp.Users.Parent;
-import com.example.myapp.Users.UserLocalStore;
 
 public class AddParent extends AppCompatActivity implements View.OnClickListener {
     Button btAddParent,btGoBack,btChooseChild;
