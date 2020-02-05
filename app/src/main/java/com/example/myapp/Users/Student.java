@@ -28,6 +28,7 @@ public class Student extends User {
     public Student(String userName, String password){
         this(userName,password,"","",-1,"");
     }
+
     public Student(String userName, String password, String firstName, String lastName,
                    int age, String emailAddress) {
         super(userName, password, firstName, lastName, age, emailAddress,AccessLevel.STUDENT);
@@ -45,9 +46,9 @@ public class Student extends User {
     public Student(String userName, String password, String firstName, String lastName,
                    int age,  String emailAddress, String parentUserName, String className){
      this(userName,password,firstName,lastName,age,emailAddress,className);
+        //this.parent=parent;
+        this.parent = (Parent) UserDB.getInstance().searchUser(parentUserName);
 
-        parent = (Parent) UserDB.getInstance().searchUser(parentUserName);
-        parent.child=this;
 
         }
 

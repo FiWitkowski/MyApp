@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherActivity.TeacherMainActivity"></activity>
+        <activity android:name=".LayoutHandle.StudentMainActivity"></activity>
+        <activity android:name=".TeacherActivity.TeacherMainActivity" />
         <activity android:name=".LayoutHandle.ParentActivity" />
         <activity android:name=".LayoutHandle.AdminPanelHandle.AddParent" />
         <activity
