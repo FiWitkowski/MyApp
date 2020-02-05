@@ -20,7 +20,7 @@ public class Class {
 
     public Class(String className) {
 
-        this.listStudents = new ArrayList<Student>() {
+        this.listStudents = new ArrayList<Student>();
 
         this.className=className;
     }
