@@ -5,19 +5,19 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 
 import com.example.myapp.Misc.Class;
-import com.example.myapp.Users.User;
 
 import java.io.Serializable;
 import java.util.LinkedList;
 
 public class ClassDB implements Serializable {
-    private static final ClassDB ourInstance = new ClassDB();
+    private static ClassDB ourInstance = new ClassDB();
 
     public static ClassDB getInstance() {
         return ourInstance;
     }
 
-    protected static LinkedList<Class> classes;
+    protected static LinkedList<Class> classes=new LinkedList<Class>();
+
     private ClassDB() {
     }
 
@@ -29,8 +29,10 @@ public class ClassDB implements Serializable {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public static Class searchClass(String className){
-
-        return classes.stream().filter(myclass -> myclass.getClassName().equals(className)).findAny().orElse(null);
+        for (Class c: classes) {
+            if(c.getClassName().equals(className)) return c;
+        }
+        return null;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)

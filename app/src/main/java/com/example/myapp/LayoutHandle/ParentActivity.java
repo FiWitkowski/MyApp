@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import com.example.myapp.DataBases.UserDB;
 import com.example.myapp.Misc.Subject;
@@ -18,58 +20,78 @@ import com.example.myapp.Users.CurrentUser;
 import com.example.myapp.Users.Parent;
 import com.example.myapp.Users.Student;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-public class ParentActivity extends AppCompatActivity {
-    Button bt_CheckGrades;
-    ListView lv_SubjectList,lv_GradeList;
+public class ParentActivity extends AppCompatActivity implements View.OnClickListener{
+    Button bt_CheckGrades,bt_Exit;
+    ListView lv_GradeList;
     Parent parent;
+    Spinner spinnerSubject;
     ArrayAdapter<Integer> adapterGrades;
-    List<Integer> gradeList;
-    ArrayAdapter<Subject> adapterSubjects;
-    List<Subject> subjectList;
+    ArrayList<Integer> gradeList=new ArrayList<Integer>();
+    ArrayAdapter<String> adapterSubjects;
+    ArrayList<String> subjectList=new ArrayList<>();
+
 
     @Override
     @RequiresApi(api = Build.VERSION_CODES.N)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent);
-        //w aktywnosci gdy logujemy sie jako rodzic
-        //Parent parent = new Parent(bla bla bla);
-        //Intent i = new Intent(this, ParentActivity.class);
-        //i.putExtra("parent", parent);
-        //startActivity(i);
+
 
         bt_CheckGrades=findViewById(R.id.bt_CheckGradesParentActivity);
+        bt_Exit=findViewById(R.id.bt_ExitParentActivity);
+        spinnerSubject=findViewById(R.id.spinnerSubjectParentActivity);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        bt_CheckGrades.setOnClickListener(this);
+        bt_Exit.setOnClickListener(this);
         Intent i = getIntent();
         parent = (Parent) CurrentUser.getUser();
+
+
+        lv_GradeList=findViewById(R.id.lv_GradeListParentActivity);
+
         if(parent.child!=null) {
+
             for (Subject s : parent.child.grades.keySet()) {
-                subjectList.add(s);
+                subjectList.add(s.toString());
+
             }
         }
-//        adapterSubjects= new ArrayAdapter<Subject>(this, android.R.layout.simple_list_item_1, subjectList);
-//        lv_SubjectList.setAdapter(adapterGrades);
+        adapterSubjects = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, subjectList);
+        adapterSubjects.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSubject.setAdapter(adapterSubjects);
 
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
+    @Override
     public void onClick(View v) {
+
+        //ArrayAdapter<String> a =
+          //      new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, subjectList);
+        //spinnerSubject.setAdapter(a);
+        //a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
         try {
             switch (v.getId()) {
                 case R.id.bt_CheckGradesParentActivity:
-                    if (lv_SubjectList.getSelectedItem() != null){
-                        Subject subject = (Subject) lv_SubjectList.getSelectedItem();
-                        gradeList = parent.checkGrades(subject);
-                        adapterGrades = new ArrayAdapter<Integer>(this,
-                            android.R.layout.simple_list_item_1, gradeList);
-                        lv_GradeList.setAdapter(adapterGrades);
+                    if (0==0){
+                        //Subject subject = (Subject) lv_SubjectList.getSelectedItem();
+                        //gradeList = parent.checkGrades(subject);
+                        //adapterGrades = new ArrayAdapter<Integer>(this, android.R.layout.simple_list_item_1, gradeList);
+                        //lv_GradeList.setAdapter(adapterGrades);
                     }
+
                     break;
                 case R.id.bt_ExitParentActivity:
-                this.finish();
+                finish();
             }
 
         } catch (Exception e) {

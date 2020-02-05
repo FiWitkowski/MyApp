@@ -12,15 +12,17 @@ import com.example.myapp.Misc.Class;
 import com.example.myapp.Misc.Subject;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 public class Student extends User {
 
     public Class myClass;
-    public Map<Subject, List<Integer>> grades;
+    public Map<Subject, List<Integer>> grades=new HashMap<Subject, List<Integer>>();
     public Parent parent;
-    public List<Book> books;
+    public List<Book> books=new LinkedList<Book>();
 
 
     public Student(String userName, String password){
@@ -36,6 +38,7 @@ public class Student extends User {
                    int age, String emailAddress, String className){
         this(userName,password,firstName,lastName,age,emailAddress);
         myClass = ClassDB.getInstance().searchClass(className);
+        myClass.AddStudent(this);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -43,7 +46,8 @@ public class Student extends User {
                    int age,  String emailAddress, String parentUserName, String className){
      this(userName,password,firstName,lastName,age,emailAddress,className);
 
-       parent = (Parent) UserDB.getInstance().searchUser(parentUserName);
+        parent = (Parent) UserDB.getInstance().searchUser(parentUserName);
+        parent.child=this;
 
         }
 
