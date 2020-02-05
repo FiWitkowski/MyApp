@@ -44,7 +44,7 @@ public class ParentActivity extends AppCompatActivity {
         bt_CheckGrades=findViewById(R.id.bt_CheckGradesParentActivity);
         Intent i = getIntent();
         parent = (Parent)i.getSerializableExtra("parent");
-        for(Subject s:((Student)UserDB.getInstance().searchUser(parent.childUserName)).grades.keySet()){
+        for(Subject s:((Student)UserDB.getInstance().searchUser(parent.child.userName)).grades.keySet()){
             subjectList.add(s);
         }
         adapterSubjects= new ArrayAdapter<Subject>(this, android.R.layout.simple_list_item_1, subjectList);

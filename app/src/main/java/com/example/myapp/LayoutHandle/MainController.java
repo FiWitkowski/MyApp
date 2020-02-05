@@ -1,5 +1,11 @@
 package com.example.myapp.LayoutHandle;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import com.example.myapp.Misc.Class;
 import com.example.myapp.Misc.Grade;
 import com.example.myapp.Misc.Subject;
 import com.example.myapp.Users.Parent;
@@ -10,6 +16,7 @@ import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MainController {
@@ -29,7 +36,7 @@ public class MainController {
         return null;
     }
 
-    public ArrayList<Student> getListOfStudents(Parent parent){
+    public ArrayList<Student> getListOfStudents(java.lang.Class parent){
         return new ArrayList<Student>();
     }
 
@@ -62,10 +69,7 @@ public class MainController {
     }
 
     public void updateGrade(Grade oldG, Grade newG){
-
     }
-
-
 
 
 

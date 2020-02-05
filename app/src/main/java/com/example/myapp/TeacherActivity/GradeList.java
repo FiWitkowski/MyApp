@@ -27,6 +27,7 @@ import com.example.myapp.R;
 import com.example.myapp.Users.Student;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class GradeList extends AppCompatActivity {
 
@@ -103,9 +104,9 @@ public class GradeList extends AppCompatActivity {
                 changeButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String grade=popupSpinner1.getSelectedItem().toString();
+                        String grade=(String) popupSpinner1.getSelectedItem().toString();
                         String type=popupSpinner2.getSelectedItem().toString();
-                        Grade newGrade=new Grade(pupil,Integer.parseInt(grade),subject, sc,oldGrade.getDate(),type);
+                        Grade newGrade=new Grade(pupil,Integer.parseInt(grade),subject, sc, oldGrade.getDate());
                         controller.updateGrade(oldGrade,newGrade);
                         popupWindow.dismiss();
                         finish();
@@ -172,8 +173,7 @@ public class GradeList extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         String grade=popupSpinner1.getSelectedItem().toString();
-                        String type=popupSpinner2.getSelectedItem().toString();
-                        Grade newGrade=new Grade(pupil,Integer.parseInt(grade),subject,sc,type);
+                        Grade newGrade=new Grade(pupil,Integer.parseInt(grade),subject);
                         controller.addGrade(newGrade);
                         finish();
                         startActivity(getIntent());
