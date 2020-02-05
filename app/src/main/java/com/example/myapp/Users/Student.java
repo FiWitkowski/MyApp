@@ -27,7 +27,7 @@ public class Student extends User {
     }
     public Student(String userName, String password, String firstName, String lastName,
                    int age, Date dateOfBirth, String emailAddress) {
-        super(userName, password, firstName, lastName, age, dateOfBirth, emailAddress,AccessLevel.STUDENT);
+        super(userName, password, firstName, lastName, age, emailAddress,AccessLevel.STUDENT);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
