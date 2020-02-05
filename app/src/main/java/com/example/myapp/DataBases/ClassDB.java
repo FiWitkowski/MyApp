@@ -16,7 +16,9 @@ public class ClassDB implements Serializable {
         return ourInstance;
     }
 
+
     protected static LinkedList<Class> classes=new LinkedList<Class>();
+
 
     private ClassDB() {
     }

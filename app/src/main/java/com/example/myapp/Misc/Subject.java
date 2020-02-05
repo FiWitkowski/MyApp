@@ -1,12 +1,15 @@
 package com.example.myapp.Misc;
 
+import com.example.myapp.Users.Student;
 import com.example.myapp.Users.Teacher;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Subject implements Serializable {
     private String name;
     private Teacher id;
+    public List<Student> students;
 
     public Subject(String name){
         this.name=name;
