@@ -14,6 +14,7 @@ import android.widget.ListView;
 import com.example.myapp.DataBases.UserDB;
 import com.example.myapp.Misc.Subject;
 import com.example.myapp.R;
+import com.example.myapp.Users.CurrentUser;
 import com.example.myapp.Users.Parent;
 import com.example.myapp.Users.Student;
 
@@ -43,12 +44,14 @@ public class ParentActivity extends AppCompatActivity {
 
         bt_CheckGrades=findViewById(R.id.bt_CheckGradesParentActivity);
         Intent i = getIntent();
-        parent = (Parent)i.getSerializableExtra("parent");
-        for(Subject s:((Student)UserDB.getInstance().searchUser(parent.child.userName)).grades.keySet()){
-            subjectList.add(s);
+        parent = (Parent) CurrentUser.getUser();
+        if(parent.child!=null) {
+            for (Subject s : parent.child.grades.keySet()) {
+                subjectList.add(s);
+            }
         }
-        adapterSubjects= new ArrayAdapter<Subject>(this, android.R.layout.simple_list_item_1, subjectList);
-        lv_SubjectList.setAdapter(adapterGrades);
+//        adapterSubjects= new ArrayAdapter<Subject>(this, android.R.layout.simple_list_item_1, subjectList);
+//        lv_SubjectList.setAdapter(adapterGrades);
 
     }
 

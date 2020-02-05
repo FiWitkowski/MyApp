@@ -17,6 +17,7 @@ import java.util.List;
 public class Main {
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public static void main(String []args){
 
         Student s1 = new Student("pimpon", "pimpoon", "Ola", "Kralka", 13, "pimpon@onet.pl", "1b");

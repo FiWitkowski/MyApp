@@ -18,7 +18,7 @@ public class Parent extends User implements Serializable {
         this(userName,password,"","",-1,"");
     }
     public Parent(String userName, String password, String firstName,
-                  String lastName,int age,  String emailAddress) {
+                  String lastName,int age, String emailAddress) {
         super(userName, password, firstName, lastName, age, emailAddress,AccessLevel.PARENT);
     }
 
@@ -31,7 +31,7 @@ public class Parent extends User implements Serializable {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public List<Integer> checkGrades(Subject subject){
-        return ((Student)UserDB.getInstance().searchUser(child.userName)).grades.get(subject);
+        return (child.grades.get(subject));
     }
 
 
