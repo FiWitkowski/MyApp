@@ -16,7 +16,7 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
 
     Button btAddStudent,btGoBack;
     EditText etUserName, etPassword1,etPassword2,etFirstName,etLastName,etClass,etEmail,etDay,etMonth,etYear;
-    UserLocalStore userLocalStore;
+
     UserDB userDB = UserDB.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,6 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
         etYear=findViewById(R.id.etYearAddStudent);
         btAddStudent=findViewById(R.id.btAddStudent2);
         btGoBack=findViewById(R.id.btGoBackAddStudent);
-        userLocalStore=new UserLocalStore(this);
 
         btAddStudent.setOnClickListener(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
