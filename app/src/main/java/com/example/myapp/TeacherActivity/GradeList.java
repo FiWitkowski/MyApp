@@ -29,11 +29,12 @@ import com.example.myapp.Users.Student;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class GradeList extends AppCompatActivity {
+public class GradeList extends AppCompatActivity implements View.OnClickListener{
 
     private ListView list ;
     private ArrayAdapter<Grade> adapter ;
     private MainController controller=MainController.getInstance();
+
 
     private Context mContext;
     private Activity mActivity;
@@ -55,7 +56,7 @@ public class GradeList extends AppCompatActivity {
         mActivity = GradeList.this;
         mConstraintLayout = (ConstraintLayout) findViewById(R.id.cl);
         list = (ListView) findViewById(R.id.listView1);
-        addButton = (Button) findViewById(R.id.addButton);
+        addButton = (Button) findViewById(R.id.btAddGrade);
         Intent intent = getIntent();
         final Bundle childbundle = intent.getExtras();
 
@@ -159,7 +160,7 @@ public class GradeList extends AppCompatActivity {
                 popupSpinner2.setAdapter(b);
 
                 Button cancelButton = (Button) popupView.findViewById(R.id.cancelButton);
-                Button addButton = (Button) popupView.findViewById(R.id.addButton);
+                Button addButton = (Button) popupView.findViewById(R.id.btAddGrade);
                 ImageButton closeButton = (ImageButton) popupView.findViewById(R.id.ib_close);
 
                 cancelButton.setOnClickListener(new View.OnClickListener() {
@@ -194,4 +195,10 @@ public class GradeList extends AppCompatActivity {
             }
 
         });
-    }}
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+}
