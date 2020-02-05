@@ -84,42 +84,17 @@
             android:hint="Last Name"
             android:inputType="textPersonName" />
 
-        <TextView
-            android:id="@+id/tvDateOfBirthAddStudent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date Of Birth"
-            android:textSize="18sp" />
-
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
             <EditText
-                android:id="@+id/etDayAddStudent"
+                android:id="@+id/etAgeAddStudent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Day"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/etMonthAddStudent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Month"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/etYearAddStudent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Year"
+                android:hint="Age"
                 android:inputType="number" />
 
         </TableRow>

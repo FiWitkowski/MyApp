@@ -12,7 +12,7 @@ import com.example.myapp.R;
 
 public class AddTeacher extends AppCompatActivity implements View.OnClickListener{
     Button btAddTeacher2,btGoBackAddTeacher;
-    EditText etUserName, etPassword1,etPassword2,etFirstName,etLastName,etEmail,etDay,etMonth,etYear;
+    EditText etUserName, etPassword1,etPassword2,etFirstName,etLastName,etEmail,etAge;
 
     UserDB userDB = UserDB.getInstance();
     @Override
@@ -25,9 +25,7 @@ public class AddTeacher extends AppCompatActivity implements View.OnClickListene
         etEmail=findViewById(R.id.etEmailAddTeacher);
         etFirstName=findViewById(R.id.etFirstNameAddTeacher);
         etLastName=findViewById(R.id.etLastNameAddTeacher);
-        etDay=findViewById(R.id.etDayAddTeacher);
-        etMonth=findViewById(R.id.etMonthAddTeacher);
-        etYear=findViewById(R.id.etYearAddTeacher);
+        etAge=findViewById(R.id.etAgeAddTeacher);
         btAddTeacher2=findViewById(R.id.btAddTeacher2);
         btGoBackAddTeacher=findViewById(R.id.btGoBackAddTeacher);
     }
