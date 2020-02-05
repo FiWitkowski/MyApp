@@ -8,6 +8,8 @@ import com.example.myapp.DataBases.UserDB;
 import com.example.myapp.MainApp;
 import com.example.myapp.R;
 import com.example.myapp.Users.Admin;
+import com.example.myapp.Users.CurrentUser;
+import com.example.myapp.Users.Parent;
 import com.example.myapp.Users.Student;
 import com.example.myapp.Users.User;
 
@@ -53,17 +55,38 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                     if(etUsername.getText().toString().equals("admin")&&
                             etPassword.getText().toString().equals("admin")) {
+                        CurrentUser.setUser(Admin.getInstance());
                         startActivity(new Intent(this,AdminPanel.class));
                         break;
                     }
 
+                    UserDB.addUser(new Parent("parent","parent","Kralek","Krawczyk",
+                            99,"rodzic@interia.pl"));
+
 
                     //need change
-
-                    User user = new Student("", "", "", "",-1,new Date(1,1,1),"");
-
-                    startActivity(new Intent(this, MainApp.class));
-                    break;
+                    User user = UserDB.getInstance().searchUser(etUsername.getText().toString());
+                    if(user!=null){
+                         if(user.getPassword().equals(etPassword.getText().toString())){
+                            CurrentUser.setUser(user);
+                            switch(user.typeOfUser){
+                                case STUDENT:
+                                    break;
+                                case TEACHER:
+                                    break;
+                                case PARENT:
+                                    startActivity(new Intent(this,ParentActivity.class));
+                                    break;
+                                case PRINCIPAL:
+                                    break;
+                                case LIBRARY_ASSISTANT:
+                                    break;
+                                default:
+                                    startActivity(new Intent(this,MainApp.class));
+                            }
+                         }
+                    }
+                        break;
                 case R.id.tvRegisterLink:
                     startActivity(new Intent(this, Register.class));
                     break;

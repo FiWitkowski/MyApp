@@ -5,11 +5,11 @@ public class CurrentUser {
 
     private void CurrentUse(){};
 
-    public User getUser(){
+    public static User getUser(){
         return instance;
     }
 
-    public void setUser(User user){
+    public static void setUser(User user){
         instance = user;
     }
 
