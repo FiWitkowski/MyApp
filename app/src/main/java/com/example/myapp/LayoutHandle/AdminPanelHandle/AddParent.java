@@ -13,7 +13,6 @@ import com.example.myapp.R;
 public class AddParent extends AppCompatActivity implements View.OnClickListener {
     Button btAddParent,btGoBack,btChooseChild;
     EditText etUserName, etPassword1,etPassword2,etFirstName,etLastName,etClass,etEmail,etPhone;
-    UserLocalStore userLocalStore;
     UserDB userDB = UserDB.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +27,7 @@ public class AddParent extends AppCompatActivity implements View.OnClickListener
         btAddParent=findViewById(R.id.btAddParent2);
         btGoBack=findViewById(R.id.btGoBackAddParent);
         btChooseChild=findViewById(R.id.btChooseChildAddParent);
-        userLocalStore=new UserLocalStore(this);
+
     }
 
     @Override

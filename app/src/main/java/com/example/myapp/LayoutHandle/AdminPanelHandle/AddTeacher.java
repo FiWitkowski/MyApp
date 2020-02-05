@@ -14,7 +14,6 @@ public class AddTeacher extends AppCompatActivity implements View.OnClickListene
     Button btAddTeacher2,btGoBackAddTeacher;
     EditText etUserName, etPassword1,etPassword2,etFirstName,etLastName,etEmail,etDay,etMonth,etYear;
 
-    UserLocalStore userLocalStore;
     UserDB userDB = UserDB.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +30,6 @@ public class AddTeacher extends AppCompatActivity implements View.OnClickListene
         etYear=findViewById(R.id.etYearAddTeacher);
         btAddTeacher2=findViewById(R.id.btAddTeacher2);
         btGoBackAddTeacher=findViewById(R.id.btGoBackAddTeacher);
-        userLocalStore=new UserLocalStore(this);
     }
 
     @Override

@@ -15,7 +15,6 @@ import com.example.myapp.Users.User;
 public class MainApp extends AppCompatActivity implements View.OnClickListener {
 
     Button buttonLogout,buttonSettings;
-    UserLocalStore userLocalStore;
     Button tvUserDetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +39,6 @@ public class MainApp extends AppCompatActivity implements View.OnClickListener {
 //        }
 //    }
 
-    public void displayUserDetails(){
-        User user = userLocalStore.getLoggedInUser();
-    tvUserDetails.setText(user.firstName+" "+user.lastName);
-    }
-
-    private boolean authenticate(){
-        return userLocalStore.getUserLoggedIn();
-    }
 
 
     @Override
