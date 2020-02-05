@@ -7,7 +7,17 @@ import java.util.Date;
 public abstract class User {
     protected String userName;
     protected String password;
-    public String firstName, lastName;
+    public String firstName;
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String lastName;
     public int age;
     public String emailAddress;
     public AccessLevel typeOfUser;
