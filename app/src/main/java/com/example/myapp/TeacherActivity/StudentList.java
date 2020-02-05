@@ -47,7 +47,7 @@ public class StudentList extends AppCompatActivity {
             map.put("col_2", students.get(i).getFirstName());
             fillMaps.add(map);
         }
-        SimpleAdapter adapter = new SimpleAdapter(this, fillMaps, R.layout.simple_list_item_1, from, to);
+        SimpleAdapter adapter = new SimpleAdapter(this, fillMaps, android.R.layout.simple_list_item_1,from, to);
         list.setAdapter(adapter);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
