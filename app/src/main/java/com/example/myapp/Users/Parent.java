@@ -24,7 +24,7 @@ public class Parent extends User implements Serializable {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public Parent(String userName, String password, String firstName, String lastName,
-                  int age, Date dateOfBirth, String emailAddress, Student child){
+                  int age, String emailAddress, Student child){
         this(userName,password,firstName,lastName,age,emailAddress);
         this.child=child;
     }

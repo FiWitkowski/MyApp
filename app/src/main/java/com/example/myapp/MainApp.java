@@ -29,18 +29,6 @@ public class MainApp extends AppCompatActivity implements View.OnClickListener {
     //    userLocalStore = new UserLocalStore(this);
     }
 
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        if(authenticate()){
-//        displayUserDetails();
-//        }else{
-//            startActivity(new Intent(this,Login.class));
-//        }
-//    }
-
-
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){

@@ -2,7 +2,7 @@ package com.example.myapp.Users;
 
 
 public abstract class User {
-    protected String userName;
+    public String userName;
     protected String password;
     public String firstName, lastName;
     public int age;
@@ -47,6 +47,14 @@ public abstract class User {
         final public String getPassword(){
         return this.password;
     }
+    public String getEmail() {
+        return emailAddress;
+    }
+
+    public void setEmail(String email) {
+        this.emailAddress = emailAddress;
+    }
+
 
 
 }

@@ -11,35 +11,21 @@ public class Grade {
     private Subject subject;
     private Class sclass;
     private Date date;
-    private String weight;
     private int id;
 
-    public Grade(Student student, int value, Subject subject, Class sclass, Date date, String weight){
+    public Grade(Student student, int value, Subject subject, Class sclass, Date date){
         this.student=student;
         this.value=value;
         this.subject=subject;
         this.sclass=sclass;
-        this.date=date;
-        this.weight=weightParse(weight);
     }
 
-    public Grade(int id,Student student, int value, Subject subject, Class sclass, Date date, String weight){
-        this.student=student;
-        this.value=value;
-        this.subject=subject;
-        this.sclass=sclass;
-        this.date=date;
-        this.weight=weightParse(weight);
-        this.id=id;
-    }
 
-    public Grade(Student student, int value, Subject subject, Class sclass, String weight){
+    public Grade(Student student, int value, Subject subject){
         this.student=student;
         this.value=value;
         this.subject=subject;
-        this.sclass=sclass;
         this.date=new Date();
-        this.weight=weightParse(weight);
     }
 
     public Student getStudent() {
@@ -62,9 +48,6 @@ public class Grade {
         return date;
     }
 
-    public String getWeight() {
-        return weight;
-    }
 
     public int getId() {
         return id;
@@ -85,6 +68,6 @@ public class Grade {
     }
     @Override
     public String toString(){
-        return value+" ("+weight+" "+date+")";
+        return value+" ( "+date+")";
     }
 }
