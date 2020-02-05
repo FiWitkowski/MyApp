@@ -11,12 +11,11 @@ import java.io.Serializable;
 import java.util.LinkedList;
 
 public class ClassDB implements Serializable {
-    private static final ClassDB ourInstance = new ClassDB();
+    private static ClassDB ourInstance = new ClassDB();
 
     public static ClassDB getInstance() {
         return ourInstance;
     }
-
     protected static LinkedList<Class> classes;
     private ClassDB() {
     }

@@ -7,6 +7,7 @@ import androidx.annotation.RequiresApi;
 
 import com.example.myapp.Users.Student;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Class {
@@ -14,8 +15,9 @@ public class Class {
     public String className;
     public List<Student> listStudents;
 
-    public Class(String className, List<Student> listStudents) {
-        this.listStudents = listStudents;
+    public Class(String className) {
+        this.listStudents = new ArrayList<Student>() {
+        };
         this.className=className;
     }
 
