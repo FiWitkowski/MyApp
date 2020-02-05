@@ -15,8 +15,7 @@ import com.example.myapp.Users.Student;
 public class AddStudent extends AppCompatActivity implements View.OnClickListener {
 
     Button btAddStudent,btGoBack;
-    EditText etUserName, etPassword1,etPassword2,etFirstName,etLastName,etClass,etEmail,etDay,etMonth,etYear;
-    UserLocalStore userLocalStore;
+    EditText etUserName, etPassword1,etPassword2,etFirstName,etLastName,etClass,etEmail,etAge;
     UserDB userDB = UserDB.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +28,9 @@ public class AddStudent extends AppCompatActivity implements View.OnClickListene
         etLastName=findViewById(R.id.etLastName);
         etClass=findViewById(R.id.etClassAddStudent);
         etEmail=findViewById(R.id.etEmailAddStudent);
-        etDay=findViewById(R.id.etDayAddStudent);
-        etMonth=findViewById(R.id.etMonthAddStudent);
-        etYear=findViewById(R.id.etYearAddStudent);
+        etAge=findViewById(R.id.etAgeAddStudent);
         btAddStudent=findViewById(R.id.btAddStudent2);
         btGoBack=findViewById(R.id.btGoBackAddStudent);
-        userLocalStore=new UserLocalStore(this);
 
         btAddStudent.setOnClickListener(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -7,25 +7,23 @@ import com.example.myapp.DataBases.UserDB;
 import com.example.myapp.Misc.Subject;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 public class Parent extends User implements Serializable {
-
     public String childUserName;
 
     public Parent(String userName, String password){
-        this(userName,password,"","",-1,new Date(1000,1,1),"");
+        this(userName,password,"","",-1,"");
     }
     public Parent(String userName, String password, String firstName,
-                  String lastName,int age, Date dateOfBirth, String emailAddress) {
-        super(userName, password, firstName, lastName, age, dateOfBirth, emailAddress,AccessLevel.PARENT);
+                  String lastName,int age,String emailAddress) {
+        super(userName, password, firstName, lastName, age, emailAddress,AccessLevel.PARENT);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public Parent(String userName, String password, String firstName, String lastName,
-                  int age, Date dateOfBirth, String emailAddress, Student child){
-        this(userName,password,firstName,lastName,age,dateOfBirth,emailAddress);
+                  int age, String emailAddress, Student child){
+        this(userName,password,firstName,lastName,age,emailAddress);
+        childUserName=child.userName;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
