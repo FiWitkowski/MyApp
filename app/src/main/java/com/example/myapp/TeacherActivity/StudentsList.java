@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.example.myapp.LayoutHandle.MainController;
 import com.example.myapp.Misc.Subject;
 import com.example.myapp.R;
 import com.example.myapp.Users.Student;
@@ -16,6 +17,8 @@ import com.example.myapp.Users.Student;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import javax.security.auth.Subject;
 
 public class StudentsList extends AppCompatActivity {
 
