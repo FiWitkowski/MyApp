@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TeacherActivity.AddMark">
+    tools:context=".TeacherActivity.EditMark">
 
     <LinearLayout
-        android:layout_width="386dp"
-        android:layout_height="402dp"
+        android:layout_width="310dp"
+        android:layout_height="276dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="90dp"
         android:layout_marginEnd="8dp"
@@ -17,10 +17,9 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665">
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageButton
@@ -41,7 +40,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="0dp"
-            android:text="OCENA"
+            android:text="ZMIEŃ"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.111"
@@ -80,23 +79,30 @@
             android:spinnerMode="dialog" />
 
         <TableRow
-            android:layout_width="266dp"
+            android:layout_width="wrap_content"
             android:layout_height="58dp"
             android:layout_gravity="center">
 
             <Button
-                android:id="@+id/addButton"
-                android:layout_width="130dp"
+                android:id="@+id/changeButton"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DODAJ OCENĘ" />
+                android:text="ZMIEŃ" />
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:text="USUŃ" />
 
             <Button
                 android:id="@+id/cancelButton"
-                android:layout_width="130dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="ANULUJ" />
 
         </TableRow>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

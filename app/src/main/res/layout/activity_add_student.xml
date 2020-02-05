@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LayoutHandle.AdminPanelHandle.AddStudent">
+    tools:context=".LayoutHandle.AdminPanelHandle.Add">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -20,14 +20,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvAddStudent"
+            android:id="@+id/tvAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Student"
+            android:text="Add "
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/etUserNameAddStudent"
+            android:id="@+id/etUserNameAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -37,7 +37,7 @@
             android:singleLine="true" />
 
         <EditText
-            android:id="@+id/etPassword1AddStudent"
+            android:id="@+id/etPassword1Add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -45,7 +45,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/etPassword2AddStudent"
+            android:id="@+id/etPassword2Add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -53,7 +53,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/etClassAddStudent"
+            android:id="@+id/etClassAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -61,7 +61,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/etEmailAddStudent"
+            android:id="@+id/etEmailAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -69,7 +69,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/etFirstNameAddStudent"
+            android:id="@+id/etFirstNameAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -77,7 +77,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/etLastNameAddStudent"
+            android:id="@+id/etLastNameAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -85,7 +85,7 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/tvDateOfBirthAddStudent"
+            android:id="@+id/tvDateOfBirthAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date Of Birth"
@@ -96,7 +96,7 @@
             android:layout_height="match_parent" >
 
             <EditText
-                android:id="@+id/etDayAddStudent"
+                android:id="@+id/etDayAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -105,7 +105,7 @@
                 android:inputType="number" />
 
             <EditText
-                android:id="@+id/etMonthAddStudent"
+                android:id="@+id/etMonthAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -114,7 +114,7 @@
                 android:inputType="number" />
 
             <EditText
-                android:id="@+id/etYearAddStudent"
+                android:id="@+id/etYearAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -125,15 +125,15 @@
         </TableRow>
 
         <Button
-            android:id="@+id/btAddStudent2"
+            android:id="@+id/btAdd2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Student" />
+            android:text="Add " />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/btGoBackAddStudent"
+        android:id="@+id/btGoBackAdd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

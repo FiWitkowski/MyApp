@@ -78,11 +78,11 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btAddStudent"
+                android:id="@+id/btAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Add Student" />
+                android:text="Add " />
 
             <Button
                 android:id="@+id/btAddTeacher"

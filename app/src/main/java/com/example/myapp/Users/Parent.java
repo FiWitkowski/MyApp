@@ -1,9 +1,31 @@
 package com.example.myapp.Users;
 
+import java.util.List;
+
 public class Parent extends User {
-    //private String phone;
-    //public Parent(String firstName, String lastName, String userName, String password, String phone) {
-     //   super(firstName,lastName,userName,password);
-      //  this.phone=phone;
-    //}
+    private List<Student> children;
+    private String email;
+    private String password;
+    private String firstName;
+    private String lastName;
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 }

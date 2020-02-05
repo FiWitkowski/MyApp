@@ -8,12 +8,15 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.myapp.LayoutHandle.Login;
+import com.example.myapp.LayoutHandle.MainController;
 import com.example.myapp.LayoutHandle.Settings;
 import com.example.myapp.Users.User;
 import com.example.myapp.Users.UserLocalStore;
 
 
 public class MainApp extends AppCompatActivity implements View.OnClickListener {
+
+    MainController m = new MainController();
 
     Button buttonLogout,buttonSettings;
     UserLocalStore userLocalStore;

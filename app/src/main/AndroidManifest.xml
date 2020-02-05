@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherActivity.AddMark"></activity>
+        <activity android:name=".TeacherActivity.EditMark" />
+        <activity android:name=".TeacherActivity.GradesList" />
+        <activity android:name=".TeacherActivity.AddMark" />
         <activity android:name=".TeacherActivity.TeacherMainAct" />
         <activity android:name=".TeacherActivity.StudentsList" />
         <activity android:name=".LayoutHandle.AdminPanelHandle.AddParent" />
