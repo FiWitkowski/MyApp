@@ -2,7 +2,6 @@ package com.example.myapp.LayoutHandle.AdminPanelHandle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.EditText;
 import com.example.myapp.DataBases.UserDB;
 import com.example.myapp.R;
 import com.example.myapp.Users.Student;
-import com.example.myapp.Users.UserLocalStore;
 
 public class AddStudent extends AppCompatActivity implements View.OnClickListener {
 
