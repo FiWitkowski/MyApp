@@ -16,48 +16,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Choose child "
+            android:text="Subjects of your child"
             android:textSize="20sp" />
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/lv_SubjectListParentActivity"
             android:layout_width="match_parent"
-            android:layout_height="178dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/bt_SelectChildParentActivity"
-                android:layout_width="114dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:text="Select Child" />
-
-            <ListView
-                android:id="@+id/lv_ChildListParentActivity"
-                android:layout_width="298dp"
-                android:layout_height="177dp"
-                android:layout_gravity="right"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/bt_SelectSubjectParentActivity"
-                android:layout_width="104dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_weight="1"
-                android:text="Select Subject" />
-
-            <ListView
-                android:id="@+id/lv_SubjectListParentActivity"
-                android:layout_width="298dp"
-                android:layout_height="177dp"
-                android:layout_gravity="right" />
-
-        </LinearLayout>
+            android:layout_height="277dp"
+            android:layout_gravity="right"
+            android:clickable="true" />
 
         <TextView
             android:id="@+id/textView6"
@@ -69,15 +36,15 @@
 
         <ListView
             android:id="@+id/lv_GradeListParentActivity"
-            android:layout_width="298dp"
-            android:layout_height="149dp"
+            android:layout_width="412dp"
+            android:layout_height="212dp"
             android:layout_gravity="right" />
 
         <Button
-            android:id="@+id/bt_ClearParentActivity"
+            android:id="@+id/bt_CheckGradesParentActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Clear"
+            android:text="Check grades"
             android:visibility="visible" />
 
         <Button
