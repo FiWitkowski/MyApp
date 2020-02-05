@@ -67,7 +67,7 @@ public class GradeList extends AppCompatActivity implements View.OnClickListener
 
 
         final ArrayList<Grade> oldGrades = controller.getListOfGrades(pupil,subject);
-        adapter = new ArrayAdapter<Grade>(this, R.layout.simple_list_item_1, oldGrades);
+        adapter = new ArrayAdapter<Grade>(this, android.R.layout.simple_list_item_1, oldGrades);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override

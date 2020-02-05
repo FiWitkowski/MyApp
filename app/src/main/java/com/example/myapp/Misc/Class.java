@@ -8,16 +8,20 @@ import androidx.annotation.RequiresApi;
 import com.example.myapp.Users.Student;
 
 import java.util.ArrayList;
+
+import java.util.LinkedList;
+
 import java.util.List;
 
 public class Class {
 
     public String className;
-    public List<Student> listStudents;
+    public List<Student> listStudents=new LinkedList<Student>();
 
     public Class(String className) {
+
         this.listStudents = new ArrayList<Student>() {
-        };
+
         this.className=className;
     }
 

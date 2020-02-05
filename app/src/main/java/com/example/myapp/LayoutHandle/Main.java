@@ -20,23 +20,17 @@ public class Main {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public static void main(String []args){
 
+
+
+
+        Class a2= new Class("2a");
+        Class b1= new Class("1b");
+
         Student s1 = new Student("pimpon", "pimpoon", "Ola", "Kralka", 13, "pimpon@onet.pl", "1b");
         Student s2 = new Student("pimpon2", "pimpoon2", "Iza", "Krawczyk", 12, "pimpon2@onet.pl", "1b");
         Student s3 = new Student("pimpon3", "pimpoon3", "Filip", "Witkowski", 14, "pimpon333@onet.pl", "2a");
         Student s4 = new Student("pimpon4", "pimpoon4", "Marcin", "Żyrkowski", 13, "pimpooon@onet.pl", "1b");
         Student s5 = new Student("pimpon5", "pimpoon5", "Pimpon", "Pimponowski", 14, "pimpon@onet.pl", "2a");
-
-        List<Student> listStudents1b = new ArrayList<Student>();
-        List<Student> listStudents2a = new ArrayList<Student>();
-
-        listStudents1b.add(s1);
-        listStudents1b.add(s2);
-        listStudents1b.add(s4);
-        listStudents2a.add(s3);
-        listStudents2a.add(s5);
-
-        Class a2= new Class("2a", listStudents2a);
-        Class b1= new Class("1b", listStudents1b);
 
 
         Teacher t1 = new Teacher("nauczyciel1", "kochamdzieci123", "Teresa", "Kowalska", 59, "tereska@o2.pl");
