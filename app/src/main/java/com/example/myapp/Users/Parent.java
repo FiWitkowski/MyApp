@@ -19,7 +19,7 @@ public class Parent extends User implements Serializable {
     }
     public Parent(String userName, String password, String firstName,
                   String lastName,int age, Date dateOfBirth, String emailAddress) {
-        super(userName, password, firstName, lastName, age, dateOfBirth, emailAddress,AccessLevel.PARENT);
+        super(userName, password, firstName, lastName, age, emailAddress,AccessLevel.PARENT);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
