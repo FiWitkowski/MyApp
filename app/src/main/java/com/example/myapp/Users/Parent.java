@@ -7,6 +7,7 @@ import com.example.myapp.DataBases.UserDB;
 import com.example.myapp.Misc.Subject;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -30,8 +31,8 @@ public class Parent extends User implements Serializable {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public List<Integer> checkGrades(Subject subject){
-        return (child.grades.get(subject));
+    public ArrayList<Integer> checkGrades(String subject){
+        return new ArrayList<>(child.grades.get(child.getSubjectOfChild(subject)));
     }
 
 

@@ -51,6 +51,16 @@ public class Student extends User {
 
         }
 
-
+    public Subject getSubjectOfChild(String name){
+        try {
+            for (Subject s: grades.keySet()) {
+                if(s.getName().equals(name)) return s;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
+}
+
 
