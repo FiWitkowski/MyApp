@@ -19,6 +19,9 @@ public class Class {
     public List<Student> listStudents=new LinkedList<Student>();
 
     public Class(String className) {
+
+        this.listStudents = new ArrayList<Student>();
+
         this.className=className;
     }
 
@@ -37,5 +40,4 @@ public class Class {
     public String getClassName() {
         return className;
     }
-
 }

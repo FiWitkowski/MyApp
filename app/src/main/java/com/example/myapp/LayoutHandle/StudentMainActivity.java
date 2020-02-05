@@ -16,12 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapp.Misc.Subject;
 import com.example.myapp.R;
 import com.example.myapp.Users.CurrentUser;
-import com.example.myapp.Users.Parent;
 import com.example.myapp.Users.Student;
 
 import java.util.ArrayList;
 
-public class StudentActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+public class StudentMainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
 
     Button bt_CheckGrades,bt_Exit;
     ListView lv_GradeList;
@@ -32,24 +31,23 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
     ArrayAdapter<String> adapterSubjects;
     ArrayList<String> subjectList=new ArrayList<>();
 
-
     @Override
     @RequiresApi(api = Build.VERSION_CODES.N)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student);
+        setContentView(R.layout.activity_student_main);
 
 
-        bt_CheckGrades=findViewById(R.id.bt_CheckGradesStudentActivity);
-        bt_Exit=findViewById(R.id.bt_ExitParentActivity);
-        spinnerSubject=findViewById(R.id.spinnerSubjectStudentActivity);
+        bt_CheckGrades=findViewById(R.id.bt_CheckGradesStudentMainActivity);
+        bt_Exit=findViewById(R.id.bt_ExitStudentMainActivity);
+        spinnerSubject=findViewById(R.id.spinnerSubjectStudentMainActivity);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         bt_CheckGrades.setOnClickListener(this);
         bt_Exit.setOnClickListener(this);
         spinnerSubject.setOnItemSelectedListener(this);
         Intent i = getIntent();
         student = (Student)CurrentUser.getUser();
-        lv_GradeList=(ListView) findViewById(R.id.lv_GradeListStudentActivity);
+        lv_GradeList=(ListView) findViewById(R.id.lv_GradeListStudentMainActivity);
 
         if(student.grades!=null) {
 
@@ -70,7 +68,7 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
 
         try {
             switch (v.getId()) {
-                case R.id.bt_CheckGradesStudentActivity:
+                case R.id.bt_CheckGradesStudentMainActivity:
                     String subject = (String) spinnerSubject.getSelectedItem().toString();
                     gradeList = student.parent.checkGrades(subject);
                     ArrayList<String> lista=new ArrayList<>();
@@ -78,14 +76,14 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
                         lista.add(integer.toString());
                     }
 
-                    lv_GradeList=findViewById(R.id.lv_GradeListStudentActivity);
+                    lv_GradeList=findViewById(R.id.lv_GradeListStudentMainActivity);
                     adapterGrades = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
                     lv_GradeList.setAdapter(adapterGrades);
                     lv_GradeList.setVisibility(View.VISIBLE);
 
                     break;
 
-                case R.id.bt_ExitStudentActivity:
+                case R.id.bt_ExitStudentMainActivity:
                     finish();
             }
 
@@ -104,3 +102,5 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
         spinnerSubject.setSelection(0);
     }
 }
+
+

@@ -6,11 +6,10 @@ import android.os.Bundle;
 
 import com.example.myapp.DataBases.ClassDB;
 import com.example.myapp.DataBases.UserDB;
-import com.example.myapp.MainApp;
 import com.example.myapp.Misc.Class;
-import com.example.myapp.Misc.Grade;
 import com.example.myapp.Misc.Subject;
 import com.example.myapp.R;
+import com.example.myapp.TeacherActivity.TeacherMainActivity;
 import com.example.myapp.Users.Admin;
 import com.example.myapp.Users.CurrentUser;
 import com.example.myapp.Users.Parent;
@@ -28,7 +27,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
@@ -71,19 +69,23 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     ClassDB.addClass(b1);
                     Student s1 = new Student("pimpon", "pimpon", "Ola", "Kralka",
                             13, "pimpon@onet.pl", "1b");
-                    Parent p1=new Parent("parent","parent","Kralek","Krawczyk",
+                    Parent p1 = new Parent("parent","parent","Kralek","Krawczyk",
                             99,"rodzic@interia.pl",s1);
+                    s1.parent=p1;
+
                     UserDB.addUser(p1);
 
-                    Teacher t1 = new Teacher("nauczyciel1", "kochamdzieci123", "Teresa", "Kowalska", 59, "tereska@o2.pl");
+                    Teacher t1 = new Teacher("n1", "n1", "Teresa", "Kowalska", 59, "tereska@o2.pl");
                     List<Integer> listaOcen1=new ArrayList<Integer>();
                     listaOcen1.add(1);
                     listaOcen1.add(4);
                     listaOcen1.add(5);
                     s1.grades.put(new Subject("matematyka",t1),listaOcen1);
                     s1.grades.put(new Subject("historia",t1),listaOcen1);
-                    s1.parent=p1;
+                    UserDB.addUser(t1);
                     UserDB.addUser(s1);
+
+
                     /*
                     Student s2 = new Student("pimpon2", "pimpoon2", "Iza", "Krawczyk", 12, "pimpon2@onet.pl", "1b");
                     Student s3 = new Student("pimpon3", "pimpoon3", "Filip", "Witkowski", 14, "pimpon333@onet.pl", "2a");
@@ -160,16 +162,17 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     ClassDB.addClass(b1); */
 
 
-                    //need change
+
                     User user = UserDB.getInstance().searchUser(etUsername.getText().toString());
                     if(user!=null){
                          if(user.getPassword().equals(etPassword.getText().toString())){
                             CurrentUser.setUser(user);
                             switch(user.typeOfUser){
                                 case STUDENT:
-                                    startActivity(new Intent(this,StudentActivity.class));
+                                    startActivity(new Intent(this, StudentMainActivity.class));
                                     break;
                                 case TEACHER:
+                                    startActivity(new Intent(this, TeacherMainActivity.class));
                                     break;
                                 case PARENT:
                                     startActivity(new Intent(this,ParentActivity.class));
@@ -179,7 +182,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                 case LIBRARY_ASSISTANT:
                                     break;
                                 default:
-                                    startActivity(new Intent(this,MainApp.class));
+                                    break;
                             }
                          }
                     }
@@ -190,7 +193,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
              }
         }
         catch(Exception e){
-            throw e;
+            e.printStackTrace();
         }
     }
 }
