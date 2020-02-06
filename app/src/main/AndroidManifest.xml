@@ -12,7 +12,9 @@
         <activity android:name=".TeacherActivity.EditMark$StudentListFinale"></activity>
         <activity android:name=".TeacherActivity.TeacherMainActivity" />
         <activity android:name=".LayoutHandle.ParentActivity" />
+        <activity android:name=".LayoutHandle.StudentMainActivity"/>
         <activity android:name=".LayoutHandle.AdminPanelHandle.AddParent" />
+        <activity android:name=".LayoutHandle.AdminPanelHandle.AddTeacher"/>
         <activity
             android:name=".LayoutHandle.AdminPanelHandle.AddStudent"
             android:parentActivityName=".LayoutHandle.AdminPanel" />
