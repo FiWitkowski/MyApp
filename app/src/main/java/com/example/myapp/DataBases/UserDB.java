@@ -25,7 +25,9 @@ public class UserDB implements Serializable {
         return lista.add(u);
     }
 
-
+    public static LinkedList<User> GetList(){
+        return lista;
+    }
     public static User searchUser(String userName){
 
         for (User user:lista

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.myapp.LayoutHandle.StudentListFinale;
 import com.example.myapp.R;
 
 public class TeacherMainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -27,7 +26,7 @@ public class TeacherMainActivity extends AppCompatActivity implements View.OnCli
         try{
             switch(v.getId()){
                 case R.id.btStudents:
-                    startActivity(new Intent(this, StudentListFinale.class));
+                    startActivity(new Intent(this, EditMark.StudentListFinale.class));
                     break;
                 default:
                     break;
