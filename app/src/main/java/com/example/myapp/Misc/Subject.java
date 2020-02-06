@@ -19,6 +19,7 @@ public class Subject implements Serializable {
     {
         this.name=name;
         this.id=id;
+        id.AddSubject(this);
     }
 
     public String getName() {
