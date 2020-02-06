@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Student extends User {
 
@@ -50,7 +51,8 @@ public class Student extends User {
         this.parent = (Parent) UserDB.getInstance().searchUser(parentUserName);
 
 
-        }
+    }
+
 
     public Subject getSubjectOfChild(String name){
         try {

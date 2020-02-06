@@ -16,7 +16,7 @@ public class TeacherMainActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teachermainactivity);
-        btDziennik = (Button) findViewById(R.id.btStudentsList);
+        btDziennik = findViewById(R.id.btStudents);
         btDziennik.setOnClickListener(this);
     }
 
@@ -25,8 +25,8 @@ public class TeacherMainActivity extends AppCompatActivity implements View.OnCli
 
         try{
             switch(v.getId()){
-                case R.id.btStudentsList:
-                    startActivity(new Intent(this,StudentList.class));
+                case R.id.btStudents:
+                    startActivity(new Intent(this, EditMark.StudentListFinale.class));
                     break;
                 default:
                     break;
