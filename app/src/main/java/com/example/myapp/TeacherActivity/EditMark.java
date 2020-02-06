@@ -48,7 +48,6 @@ public class EditMark extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_student_list_finale);
-            list = (ListView) findViewById(R.id.ListViewStudents);
 
             Intent intent = getIntent();
 
@@ -76,12 +75,14 @@ public class EditMark extends AppCompatActivity {
             for (int i = 0; i < students.size(); i++) {
                 HashMap<String, String> map = new HashMap<String, String>();
                 map.put("rowid", "" + (i + 1));
-                map.put("col_1", students.get(i).getLastName());
-                map.put("col_2", students.get(i).getFirstName());
+                map.put("col_1", students.get(i).getLastName().toString());
+                map.put("col_2", students.get(i).getFirstName().toString());
                 fillMaps.add(map);
             }
+            list = (ListView) findViewById(R.id.ListViewStudents);
             SimpleAdapter adapter = new SimpleAdapter(this, fillMaps, android.R.layout.simple_list_item_1,from, to);
             list.setAdapter(adapter);
+            list.setVisibility(View.VISIBLE);
 
             list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                 @Override

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherActivity.EditMark$StudentListFinale"></activity>
+        <activity android:name=".TeacherActivity.EditMark$StudentListFinale"/>
         <activity android:name=".TeacherActivity.TeacherMainActivity" />
         <activity android:name=".LayoutHandle.ParentActivity" />
         <activity android:name=".LayoutHandle.StudentMainActivity"/>

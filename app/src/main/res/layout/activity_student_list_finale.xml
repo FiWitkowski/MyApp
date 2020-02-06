@@ -48,15 +48,9 @@
     </LinearLayout>
 
     <!-- List Divider -->
-    <View
-        android:layout_width="437dp"
-        android:layout_height="437dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="@+id/header"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- ListView (grid_items) -->
+
     <LinearLayout
         android:id="@+id/layoutH"
         android:layout_width="wrap_content"
@@ -68,8 +62,10 @@
 
         <ListView
             android:id="@+id/ListViewStudents"
-            android:layout_width="437dp"
-            android:layout_height="fill_parent"></ListView>
+            android:layout_width="match_parent"
+            android:layout_height="610dp"
+            android:visibility="visible"
+            tools:visibility="visible"></ListView>
     </LinearLayout>
 
 
