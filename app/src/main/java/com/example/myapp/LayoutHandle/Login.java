@@ -64,93 +64,29 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         startActivity(new Intent(this,AdminPanel.class));
                         break;
                     }
-
+                    //region presentation objects
                     Class b1= new Class("1b");
+                    Class a2= new Class("2a");
+                    ClassDB.addClass(a2);
                     ClassDB.addClass(b1);
-                    Student s1 = new Student("pimpon", "pimpon", "Ola", "Kralka",
-                            13, "pimpon@onet.pl", "1b");
-                    Parent p1 = new Parent("parent","parent","Kralek","Krawczyk",
-                            99,"rodzic@interia.pl",s1);
+
+                    Student s1 = new Student("student1", "student1", "Ola", "Kralka", 13, "pimpon@onet.pl", "1b");
+                    Student s2 = new Student("student2", "student2", "Iza", "Krawczyk", 12, "pimpon2@onet.pl", "1b");
+                    Student s3 = new Student("student3", "student3", "Filip", "Witkowski", 14, "pimpon333@onet.pl", "2a");
+                    Student s4 = new Student("student4", "student4", "Marcin", "Żyrkowski", 13, "pimpooon@onet.pl", "1b");
+                    Student s5 = new Student("student5", "student5", "Pimpon", "Pimponowski", 14, "pimpon@onet.pl", "2a");
+
+                    Parent p1 = new Parent("parent1","parent1","Kralek","Krawczyk", 99,"rodzic@interia.pl",s1);
+                    Parent p2 = new Parent("parent2", "parent2", "Andrzej", "Kralka", 41, "hej.jestem.andrzej@gmail.com", s1);
+                    Parent p3 = new Parent("parent3", "parent3", "Halinka", "Witkowska", 45, "lubie_kluski@gmail.com", s3);
+                    Parent p4 = new Parent("parent4", "parent4", "Alutka", "Zyrkowska", 47, "alinkaaa@gmail.com", s4);
+                    Parent p5 = new Parent("parent5", "parent5", "Janusz", "Pimponowski", 36, "pimponowski@gmail.com", s5);
+
                     s1.parent=p1;
-
-                    UserDB.addUser(p1);
-
-                    Teacher t1 = new Teacher("n1", "n1", "Teresa", "Kowalska", 59, "tereska@o2.pl");
-                    List<Integer> listaOcen1=new ArrayList<Integer>();
-                    listaOcen1.add(1);
-                    listaOcen1.add(4);
-                    listaOcen1.add(5);
-                    s1.grades.put(new Subject("matematyka",t1),listaOcen1);
-                    s1.grades.put(new Subject("historia",t1),listaOcen1);
-                    UserDB.addUser(t1);
-                    UserDB.addUser(s1);
-
-
-                    /*
-                    Student s2 = new Student("pimpon2", "pimpoon2", "Iza", "Krawczyk", 12, "pimpon2@onet.pl", "1b");
-                    Student s3 = new Student("pimpon3", "pimpoon3", "Filip", "Witkowski", 14, "pimpon333@onet.pl", "2a");
-                    Student s4 = new Student("pimpon4", "pimpoon4", "Marcin", "Żyrkowski", 13, "pimpooon@onet.pl", "1b");
-                    Student s5 = new Student("pimpon5", "pimpoon5", "Pimpon", "Pimponowski", 14, "pimpon@onet.pl", "2a");
-
-
-                    List<Student> listStudents2a = new ArrayList<Student>();
-                    listStudents1b.add(s2);
-                    listStudents1b.add(s4);
-                    listStudents2a.add(s3);
-                    listStudents2a.add(s5);
-
-
-                    Class a2= new Class("2a", listStudents2a);
-
-                    Parent p1 = new Parent("mamaBabelka", "bombelek", "Grażyna", "Krawczyk", 40, "grazynka@gmail.com", s2);
-                    Parent p2 = new Parent("tata1", "bombelek", "Andrzej", "Kralka", 41, "hej.jestem.andrzej@gmail.com", s1);
-                    Parent p3 = new Parent("mama2", "MOJbombelek", "Halinka", "Witkowska", 45, "lubie_kluski@gmail.com", s3);
-                    Parent p4 = new Parent("mama3", "NieMOJbombelek", "Alutka", "Zyrkowska", 47, "alinkaaa@gmail.com", s4);
-                    Parent p5 = new Parent("tata8", "kabum123", "Janusz", "Pimponowski", 36, "pimponowski@gmail.com", s5);
-
-                    Teacher t1 = new Teacher("nauczyciel1", "kochamdzieci123", "Teresa", "Kowalska", 59, "tereska@o2.pl");
-                    Teacher t2 = new Teacher("nauczyciel2", "niekochamdzieci", "Bogdan", "Kowalski", 28, "jestem.bogus@o2.pl");
-
-                    Subject sub1= new Subject("matematyka", t1);
-                    Subject sub2= new Subject("wf", t2);
-
-                    List<Integer> listaOcen1=new ArrayList<Integer>();
-                    listaOcen1.add(1);
-                    listaOcen1.add(4);
-                    listaOcen1.add(5);
-
-                    List<Integer> listaOcen2=new ArrayList<Integer>();
-                    listaOcen2.add(3);
-                    listaOcen2.add(4);
-                    listaOcen2.add(5);
-
-                    List<Integer> listaOcen3=new ArrayList<Integer>();
-                    listaOcen3.add(3);
-                    listaOcen3.add(2);
-                    listaOcen3.add(6);
-
-
-                    s1.grades.put(sub1,listaOcen1);
-                    s2.grades.put(sub1,listaOcen2);
-                    s3.grades.put(sub1,listaOcen3);
-                    s4.grades.put(sub1,listaOcen1);
-                    s5.grades.put(sub1,listaOcen2);
-                    s1.grades.put(sub2,listaOcen3);
-                    s2.grades.put(sub2,listaOcen1);
-                    s3.grades.put(sub2,listaOcen2);
-                    s4.grades.put(sub2,listaOcen3);
-                    s5.grades.put(sub2,listaOcen3);
-
-
-
-
-                    UserDB.addUser(s2);
-                    UserDB.addUser(s3);
-                    UserDB.addUser(s4);
-                    UserDB.addUser(s5);
-
-                    UserDB.addUser(t1);
-                    UserDB.addUser(t2);
+                    s2.parent=p2;
+                    s3.parent=p3;
+                    s4.parent=p4;
+                    s5.parent=p5;
 
                     UserDB.addUser(p1);
                     UserDB.addUser(p2);
@@ -158,9 +94,45 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     UserDB.addUser(p4);
                     UserDB.addUser(p5);
 
-                    ClassDB.addClass(a2);
-                    ClassDB.addClass(b1); */
+                    Teacher t1 = new Teacher("teacher1", "teacher1", "Teresa", "Kowalska", 59, "tereska@o2.pl");
+                    Teacher t2 = new Teacher("teacher2", "teacher2", "Bogdan", "Kowalski", 28, "jestem.bogus@o2.pl");
 
+                    List<Integer> listaOcen1=new ArrayList<Integer>();
+                    List<Integer> listaOcen2=new ArrayList<Integer>();
+                    List<Integer> listaOcen3=new ArrayList<Integer>();
+
+                    listaOcen2.add(3);
+                    listaOcen2.add(4);
+                    listaOcen2.add(5);
+                    listaOcen3.add(3);
+                    listaOcen3.add(2);
+                    listaOcen3.add(6);
+                    listaOcen1.add(1);
+                    listaOcen1.add(4);
+                    listaOcen1.add(5);
+                    listaOcen1.add(4);
+
+                    s1.grades.put(new Subject("matematyka",t1),listaOcen2);
+                    s1.grades.put(new Subject("informatyka",t2),listaOcen3);
+                    s2.grades.put(new Subject("matematyka",t1),listaOcen1);
+                    s2.grades.put(new Subject("WF",t2),listaOcen2);
+                    s3.grades.put(new Subject("fizyka",t1),listaOcen3);
+                    s3.grades.put(new Subject("historia",t2),listaOcen1);
+                    s4.grades.put(new Subject("matematyka",t1),listaOcen2);
+                    s4.grades.put(new Subject("WOS",t2),listaOcen3);
+                    s5.grades.put(new Subject("matematyka",t1),listaOcen1);
+                    s5.grades.put(new Subject("historia",t2),listaOcen2);
+                    s5.grades.put(new Subject("WF",t2),listaOcen3);
+
+
+                    UserDB.addUser(t1);
+                    UserDB.addUser(t2);
+                    UserDB.addUser(s1);
+                    UserDB.addUser(s2);
+                    UserDB.addUser(s3);
+                    UserDB.addUser(s4);
+                    UserDB.addUser(s5);
+                    //endregion
 
 
                     User user = UserDB.getInstance().searchUser(etUsername.getText().toString());

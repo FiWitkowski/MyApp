@@ -16,12 +16,10 @@ import java.util.List;
 public class Class {
 
     public String className;
-    public List<Student> listStudents=new LinkedList<Student>();
+    public List<Student> listStudents;
 
     public Class(String className) {
-
-        this.listStudents = new ArrayList<Student>();
-
+        this.listStudents = new LinkedList<Student>();
         this.className=className;
     }
 
@@ -32,6 +30,7 @@ public class Class {
     public void AddStudent(Student student){
         listStudents.add(student);
     }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void DeleteStudent(String userName){
         listStudents.stream().filter(student -> student.getUserName().equals(userName));
